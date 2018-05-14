@@ -18,11 +18,11 @@ public class CapitolizeOneString {
 		String userGivenString;
 		//String letterToFind;
 		System.out.println("Enter a sentence");
-		
+
 		userGivenString = keyboardInput.nextLine();
-		
+
 		//System.out.println("Enter a letter to find in the string");
-		
+
 		//letterToFind = keyboardInput.nextLine();
 
 		/*
@@ -36,18 +36,18 @@ public class CapitolizeOneString {
 		//printCapitalized(userGivenString);
 
 		//nameInitials(userGivenString);
-		
+
 		/*
 		 * Basic error checking. Just making sure 
 		 * the letter is only a letter, not another string.
 		 * */
-//		if(letterToFind.length() > 1) {
-//			System.out.println("that's not one letter, try again. Please just "
-//					+ "one letter.");
-//		}else {
-//			letterCount(userGivenString, letterToFind);
-//		}
-		
+		//		if(letterToFind.length() > 1) {
+		//			System.out.println("that's not one letter, try again. Please just "
+		//					+ "one letter.");
+		//		}else {
+		//			letterCount(userGivenString, letterToFind);
+		//		}
+
 		lexLargest(userGivenString);
 	}
 
@@ -112,34 +112,47 @@ public class CapitolizeOneString {
 		System.out.println("the letter '" + letterToFind + "' appears " + counter
 				+ " times in the string: '" + userGivenString + "'");
 	}
-	
+
 	/**
-	* Text Here
-	*
-	*
-	*
-	* @param
-	* @param
-	* @see
-	* @see
-	* */
-	
+	 * This method takes in a single parameter that represents
+	 * the string given by the user using Scanner. The string is split
+	 * by the empty string (space) delimiter and each word is compared
+	 * against using the compareTo() method. An integer value is returned
+	 * and a new String is assigned to the value of the string that 
+	 * comes AFTER the one, lexicographically, in the list. 
+	 *
+	 * @param lexLargestString
+	 * @see Scanner in main method
+	 * */
+
 	static void lexLargest(String userGivenString) {
-		
+		newStrings = userGivenString.split(" ");
+		String lexLargestString = "";
+		for(int i=0;i<newStrings.length;i++) {
+			for(int j=i;j<=newStrings.length-1;j++) {
+				System.out.println("run: '" + newStrings[i] + "' against: '" + newStrings[j] + "' " +
+						newStrings[i].compareTo(newStrings[j]));
+
+				if(newStrings[j].compareTo(newStrings[i]) <= 0) {
+					lexLargestString = newStrings[j];
+				}
+			}
+		}
+		System.out.println(lexLargestString);
 	}
-	
-	
+
+
 	/**
-	* Text Here
-	*
-	*
-	*
-	* @param
-	* @param
-	* @see
-	* @see
-	* */
-	
-	
-	
+	 * Text Here
+	 *
+	 *
+	 *
+	 * @param
+	 * @param
+	 * @see
+	 * @see
+	 * */
+
+
+
 }
