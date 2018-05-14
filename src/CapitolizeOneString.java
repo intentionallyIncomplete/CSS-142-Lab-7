@@ -16,8 +16,14 @@ public class CapitolizeOneString {
 		/*Scanner object for getting user input*/
 		Scanner keyboardInput = new Scanner(System.in);
 		String userGivenString;
+		//String letterToFind;
 		System.out.println("Enter a sentence");
+		
 		userGivenString = keyboardInput.nextLine();
+		
+		//System.out.println("Enter a letter to find in the string");
+		
+		//letterToFind = keyboardInput.nextLine();
 
 		/*
 		 * Static method calls
@@ -28,22 +34,35 @@ public class CapitolizeOneString {
 		 * */
 
 		//printCapitalized(userGivenString);
-		
+
 		//nameInitials(userGivenString);
+		
+		/*
+		 * Basic error checking. Just making sure 
+		 * the letter is only a letter, not another string.
+		 * */
+//		if(letterToFind.length() > 1) {
+//			System.out.println("that's not one letter, try again. Please just "
+//					+ "one letter.");
+//		}else {
+//			letterCount(userGivenString, letterToFind);
+//		}
+		
+		lexLargest(userGivenString);
 	}
 
 	/**
-	* This method will take in the String value that represents
-	* the user input obtained from Scanner and 
-	* split the words by the empty string (space) delimiter.
-	* The split() method returns an array that is iterated over
-	* and each first letter is converted to upper case and appended
-	* to the rest of the string starting at the next position.
-	*
-	* @param userGivenString represents the input from the user that was obtained
-	* using the Scanner object 
-	* @see Scanner in main method
-	* */
+	 * This method will take in the String value that represents
+	 * the user input obtained from Scanner and 
+	 * split the words by the empty string (space) delimiter.
+	 * The split() method returns an array that is iterated over
+	 * and each first letter is converted to upper case and appended
+	 * to the rest of the string starting at the next position.
+	 *
+	 * @param userGivenString represents the input from the user that was obtained
+	 * using the Scanner object 
+	 * @see Scanner in main method
+	 * */
 	static void printCapitalized(String userGivenString) {
 
 		newStrings = userGivenString.split(" ");
@@ -53,24 +72,74 @@ public class CapitolizeOneString {
 		}
 		System.out.println("\nOld Sentence: " + userGivenString);
 	}
-	
+
 	/**
-	* This method here will take in a string value provided by the user
-	* obtained by Scanner and split it using the split() method and a 
-	* space as a delimiter. Once the strings are split, they are added
-	* to an array and iterated over. While iterating, the first letters
-	* are printed to the console capitalized and have a "." appended to
-	* the end. 
-	*
-	* @see printCaptitalized()
-	* */
+	 * This method here will take in a string value provided by the user
+	 * obtained by Scanner and split it using the split() method and a 
+	 * space as a delimiter. Once the strings are split, they are added
+	 * to an array and iterated over. While iterating, the first letters
+	 * are printed to the console capitalized and have a "." appended to
+	 * the end. 
+	 *
+	 * @see printCaptitalized()
+	 * */
 	static void nameInitials(String userGivenString) {
 		newStrings = userGivenString.split(" ");
-		
+
 		for(int i=0;i<newStrings.length;i++) {
 			System.out.print(newStrings[i].toUpperCase().charAt(0) + ".");
 		}
 	}
+
+	/**
+	 * This method will take in two strings as values and tell
+	 * the console how many times one appeared in the other. The logic
+	 * used here is that splitting the sentence on the letter specified
+	 * should return an array with the same length as the number of times
+	 * the string was split. Thus meaning that the length of the array
+	 * should be the same as the number of times that character appeared.
+	 *
+	 * @param letterToFind is the single letter provided by the user
+	 * to find within the string that was provided previously.
+	 * @see main
+	 * */
+	static void letterCount(String userGivenString, String letterToFind) {
+		newStrings = userGivenString.split(letterToFind);
+		int counter = 0;
+		for(int i=0;i<newStrings.length;i++) {
+			counter += 1;
+		}
+		System.out.println("the letter '" + letterToFind + "' appears " + counter
+				+ " times in the string: '" + userGivenString + "'");
+	}
+	
+	/**
+	* Text Here
+	*
+	*
+	*
+	* @param
+	* @param
+	* @see
+	* @see
+	* */
+	
+	static void lexLargest(String userGivenString) {
+		
+	}
+	
+	
+	/**
+	* Text Here
+	*
+	*
+	*
+	* @param
+	* @param
+	* @see
+	* @see
+	* */
+	
 	
 	
 }
