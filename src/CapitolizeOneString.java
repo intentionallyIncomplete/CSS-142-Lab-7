@@ -17,9 +17,9 @@ public class CapitolizeOneString {
 		Scanner keyboardInput = new Scanner(System.in);
 		String userGivenString;
 		//String letterToFind;
-		System.out.println("Enter a sentence");
+		//System.out.println("Enter a sentence");
 
-		userGivenString = keyboardInput.nextLine();
+		//userGivenString = keyboardInput.nextLine();
 
 		//System.out.println("Enter a letter to find in the string");
 
@@ -60,10 +60,10 @@ public class CapitolizeOneString {
 		//		}
 
 		//lexLargest(userGivenString);
-		
+
 		//largestBy(userGivenString);
-		
-		charsIndex(userGivenString);
+
+		charsIndex();
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class CapitolizeOneString {
 		String lexLargestString = "";
 		for(int i=0;i<newStrings.length;i++) {
 			for(int j=0;j<newStrings.length;j++) {
-//				System.out.println("run: '" + newStrings[i] + "' against: '" + newStrings[j] + "' " +
-//						newStrings[i].compareTo(newStrings[j]));
+				//				System.out.println("run: '" + newStrings[i] + "' against: '" + newStrings[j] + "' " +
+				//						newStrings[i].compareTo(newStrings[j]));
 
 				if(newStrings[j].compareTo(newStrings[i]) <= 0) {
 					lexLargestString = newStrings[j];
@@ -179,14 +179,20 @@ public class CapitolizeOneString {
 		}
 		System.out.println(longerString);
 	}
-	
+
 	/**
-	* This method will take in a string provided by the user
-	* and print out the position in the array of where
-	* each letter is first located.
-	* */
-	
-	static void charsIndex(String userGivenString) {
+	 * This method will take in a string provided by the user
+	 * and print out the position in the array of where
+	 * each letter is located.
+	 * */
+
+	static void charsIndex() {
+		String testString = "The quick brown fox jumps over the lazy dog";
 		
+		char[] newChars = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+		for(int i=0;i<testString.length();i++) {
+			System.out.println("'" + newChars[i] + "' appears at index of: " + testString.indexOf(newChars[i]));
+		}
 	}	
 }
