@@ -27,10 +27,16 @@ public class CapitolizeOneString {
 
 		/*
 		 * Static method calls
-		 * printCaptialized(arg0){} --> Takes in a sentence provide by the user and returns it with each first letter
-		 * capitalized. 
+		 * printCaptialized(){} <p> Takes in a sentence provide by the user and returns it with each first letter
+		 * capitalized.</p> 
 		 * 
-		 * nameInitials(arg0){} --> Takes in a string and returns the initials
+		 * nameInitials(){} <p> Takes in a string and returns the initials</p>
+		 * 
+		 * letterCount() <p> Takes in a full sentence or string and a single letter to find
+		 * and then counts the number of times it appears. The method will print the count
+		 * to the console. </p>
+		 * 
+		 * lexLargest() <p>
 		 * */
 
 		//printCapitalized(userGivenString);
@@ -48,7 +54,9 @@ public class CapitolizeOneString {
 		//			letterCount(userGivenString, letterToFind);
 		//		}
 
-		lexLargest(userGivenString);
+		//lexLargest(userGivenString);
+		
+		largestBy(userGivenString);
 	}
 
 	/**
@@ -121,7 +129,8 @@ public class CapitolizeOneString {
 	 * and a new String is assigned to the value of the string that 
 	 * comes AFTER the one, lexicographically, in the list. 
 	 *
-	 * @param lexLargestString
+	 * @param lexLargestString will hold the value of the string that comes
+	 * later in the alphabet than the others in the list. 
 	 * @see Scanner in main method
 	 * */
 
@@ -130,8 +139,8 @@ public class CapitolizeOneString {
 		String lexLargestString = "";
 		for(int i=0;i<newStrings.length;i++) {
 			for(int j=i;j<=newStrings.length-1;j++) {
-				System.out.println("run: '" + newStrings[i] + "' against: '" + newStrings[j] + "' " +
-						newStrings[i].compareTo(newStrings[j]));
+//				System.out.println("run: '" + newStrings[i] + "' against: '" + newStrings[j] + "' " +
+//						newStrings[i].compareTo(newStrings[j]));
 
 				if(newStrings[j].compareTo(newStrings[i]) <= 0) {
 					lexLargestString = newStrings[j];
@@ -153,6 +162,8 @@ public class CapitolizeOneString {
 	 * @see
 	 * */
 
-
+	static void largestBy(String userGivenString) {
+		
+	}
 
 }
