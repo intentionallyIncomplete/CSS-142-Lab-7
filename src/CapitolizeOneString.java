@@ -36,7 +36,12 @@ public class CapitolizeOneString {
 		 * and then counts the number of times it appears. The method will print the count
 		 * to the console. </p>
 		 * 
-		 * lexLargest() <p>
+		 * lexLargest() <p> Uses a nested for loop to go over one string
+		 * at a time and compare to another in the sequence. String that
+		 * is largest is returned (the one closest to the end of the alphabet)</p>
+		 * 
+		 * largestBy() <p> Uses a given string to check for which word in the sequence is
+		 * the longest. Then prints that value to the console.</p>
 		 * */
 
 		//printCapitalized(userGivenString);
@@ -56,7 +61,9 @@ public class CapitolizeOneString {
 
 		//lexLargest(userGivenString);
 		
-		largestBy(userGivenString);
+		//largestBy(userGivenString);
+		
+		charsIndex(userGivenString);
 	}
 
 	/**
@@ -138,7 +145,7 @@ public class CapitolizeOneString {
 		newStrings = userGivenString.split(" ");
 		String lexLargestString = "";
 		for(int i=0;i<newStrings.length;i++) {
-			for(int j=i;j<=newStrings.length-1;j++) {
+			for(int j=0;j<newStrings.length;j++) {
 //				System.out.println("run: '" + newStrings[i] + "' against: '" + newStrings[j] + "' " +
 //						newStrings[i].compareTo(newStrings[j]));
 
@@ -152,18 +159,34 @@ public class CapitolizeOneString {
 
 
 	/**
-	 * Text Here
-	 *
-	 *
-	 *
-	 * @param
-	 * @param
-	 * @see
-	 * @see
+	 * This method will check each string against the next
+	 * in the sequence and compare their lengths. The
+	 * String with the larger of the two being compared
+	 * is assigned to the new String value "longerString"
+	 * and printed to the console at the end. 
+	 * 
 	 * */
 
 	static void largestBy(String userGivenString) {
-		
+		newStrings = userGivenString.split(" ");
+		String longerString = "";
+		for(int i=0;i<newStrings.length;i++) {
+			for (int j=0;j<newStrings.length;j++) {
+				if(newStrings[i].length() <= newStrings[j].length()) {
+					longerString = newStrings[j];
+				}
+			}
+		}
+		System.out.println(longerString);
 	}
-
+	
+	/**
+	* This method will take in a string provided by the user
+	* and print out the position in the array of where
+	* each letter is first located.
+	* */
+	
+	static void charsIndex(String userGivenString) {
+		
+	}	
 }
